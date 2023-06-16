@@ -154,8 +154,8 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-Muluken Mathewos - [Github](https://github.com/mulukenmathewos) 
-Addisu Aman - [Github](https://github.com/addisuaman)
+* Muluken Mathewos 
+* Addisu Aman 
 
 ## License
 Public Domain. No copy write protection. 
