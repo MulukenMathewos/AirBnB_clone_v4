@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import MySQLdb
+import pymysql
 import os
 
 # Get the values from environment variables
@@ -10,7 +10,7 @@ password = os.environ.get('HBNB_MYSQL_PWD')
 database = os.environ.get('HBNB_MYSQL_DB')
 
 # Connect to the MySQL database
-connection = MySQLdb.connect(host=host, user=user, password=password, database=database)
+connection = pymysql.connect(host=host, user=user, password=password, database=database)
 cursor = connection.cursor()
 
 # Get the initial count of records in the table
