@@ -5,7 +5,7 @@
 import os
 from fabric.api import run, put, env
 
-env.hosts = ['44.192.38.3', '3.239.82.120']
+env.hosts = ['54.146.67.252', '54.90.47.165']
 env.user = "ubuntu"
 
 
