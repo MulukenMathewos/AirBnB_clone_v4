@@ -19,7 +19,7 @@ def do_pack():
         file_name = "versions/web_static_{}.tgz".format(date)
         local("tar -cvzf {} web_static".format(file_name))
         return file_name
-    except Exception:
+    except ValueError:
         return None
 
 
@@ -42,7 +42,7 @@ def do_deploy(archive_path):
         run('sudo chown -R ubuntu:ubuntu {}{}'.format(path, no_ext))
         run('sudo chmod -R 755 {}{}'.format(path, no_ext))
         return True
-    except Exception:
+    except ValueError:
         return False
 
 def deploy():
