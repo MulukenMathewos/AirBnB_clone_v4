@@ -41,6 +41,7 @@ def do_deploy(archive_path):
         run('sudo ln -s {}{}/ /data/web_static/current'.format(path, no_ext))
         run('sudo chown -R ubuntu:ubuntu {}{}'.format(path, no_ext))
         run('sudo chmod -R 755 {}{}'.format(path, no_ext))
+        print("New version deployed!") 
         return True
     except ValueError:
         return False
