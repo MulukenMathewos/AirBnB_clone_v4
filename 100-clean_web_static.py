@@ -15,6 +15,7 @@ import re
 
 env.hosts = ['54.146.67.252', '54.90.47.165']
 
+
 def do_pack():
     """Function to compress files in an archive"""
     local("mkdir -p versions")
@@ -26,6 +27,7 @@ def do_pack():
     if result.failed:
         return None
     return filename
+
 
 def do_deploy(archive_path):
     """Function to distribute an archive to a server"""
@@ -66,6 +68,7 @@ def do_deploy(archive_path):
     print('New version deployed!')
     return True
 
+
 def deploy():
     """Creates and distributes an archive to a web server"""
     filepath = do_pack()
@@ -73,6 +76,7 @@ def deploy():
         return False
     d = do_deploy(filepath)
     return d
+
 
 def do_clean(number=0):
     """Deletes out-of-date archives"""
