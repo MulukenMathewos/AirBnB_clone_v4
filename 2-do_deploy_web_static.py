@@ -28,5 +28,5 @@ def do_deploy(archive_path):
         run('sudo chown -R ubuntu:ubuntu {}{}'.format(path, no_ext))
         run('sudo chmod -R 755 {}{}'.format(path, no_ext))
         return True
-    except Exception:
+    except ValueError:
         return False
