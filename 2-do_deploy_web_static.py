@@ -1,5 +1,38 @@
 #!/usr/bin/python3
 # Fabfile to distribute an archive to a web server.
+import subprocess
+
+def execute_command(command):
+    try:
+        subprocess.run(command, check=True, shell=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+def create_and_deploy_version():
+    archive_path = do_pack()
+    if archive_path is None:
+        return False
+    
+    # Deploy the version
+    if not execute_command(f"sudo mkdir -p /data/web_static/releases/{archive_path}"):
+        return False
+    if not execute_command(f"sudo tar -xzf {archive_path} -C /data/web_static/releases/{archive_path}"):
+        return False
+    if not execute_command(f"sudo rm {archive_path}"):
+        return False
+
+    # Update the symbolic link
+    if not execute_command(f"sudo ln -sf /data/web_static/releases/{archive_path} /data/web_static/current"):
+        return False
+
+    # Expose the index.html file
+    if not execute_command("sudo cp /data/web_static/current/0-index.html /var/www/html"):
+        return False
+
+    return True
+
+# Fabfile to distribute an archive to a web server.
 import os.path
 from fabric.api import env
 from fabric.api import put
