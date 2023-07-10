@@ -13,9 +13,13 @@ def do_pack():
     return archive_path
 
 
-if __name__ == '__main__':
+def print_output():
     archive_path = do_pack()
     print(
-          'web_static packed: {} -> {}Bytes'.format(
-              archive_path,
-              local('ls -l {} | cut -d " " -f 5'.format(archive_path))))
+        'web_static packed: {} -> {}Bytes'.format(
+            archive_path,
+            local('ls -l {} | cut -d " " -f 5'.format(archive_path))))
+
+
+if __name__ == '__main__':
+    print_output()
