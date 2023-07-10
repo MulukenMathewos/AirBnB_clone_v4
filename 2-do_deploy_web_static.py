@@ -10,7 +10,6 @@ env.hosts = ['54.146.67.252', '54.90.47.165']
 
 def do_deploy(archive_path):
     """Distributes an archive to a web server.
-
     Args:
         archive_path (str): The path of the archive to distribute.
     Returns:
@@ -41,9 +40,7 @@ def do_deploy(archive_path):
         return False
     if run("ln -s /data/web_static/releases/{}/ /data/web_static/current".format(name)).failed is True:
         return False
-
     # Expose the index.html file
     if run("cp /data/web_static/current/0-index.html /var/www/html").failed is True:
         return False
-
     return True
