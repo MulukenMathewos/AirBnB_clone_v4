@@ -15,6 +15,4 @@ def do_pack():
 
 if __name__ == '__main__':
     archive_path = do_pack()
-    print('web_static packed: {} -> {}Bytes'.format(archive_path,
-                                                       local('ls -l {}'.format(
-                                                           archive_path)).split()[4]))
+    print(f'web_static packed: {archive_path} -> {local("ls -l {} | cut -d " " -f 5")}')
