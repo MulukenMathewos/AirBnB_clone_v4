@@ -7,7 +7,7 @@ Returns False if the file at the path archive_path doesn't exist
 import os.path
 from fabric.api import *
 from fabric.operations import run, put, sudo
-env.hosts = ['54.146.67.252', '54.90.47.165']
+env.hosts = ['100.25.23.14', '34.204.82.119']
 
 
 def do_deploy(archive_path):
