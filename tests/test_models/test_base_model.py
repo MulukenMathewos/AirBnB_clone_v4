@@ -3,20 +3,18 @@
 
 import os
 import sys
-
-# Add the parent directory to the Python path
-parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(parent_dir)
-
 from datetime import datetime
 import inspect
-import models
 import pep8 as pycodestyle
 import time
 import unittest
 from unittest import mock
 BaseModel = models.base_model.BaseModel
 module_doc = models.base_model.__doc__
+
+# Add the parent directory to the Python path
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(parent_dir)
 
 
 class TestBaseModelDocs(unittest.TestCase):
