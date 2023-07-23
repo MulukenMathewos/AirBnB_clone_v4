@@ -3,17 +3,13 @@
 
 import os
 import sys
+from models.base_model import BaseModel, Base
+from models.city import City
+from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy.orm import relationship
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-import models
-from models.base_model import BaseModel, Base
-from models.city import City
-from os import getenv
-import sqlalchemy
-from sqlalchemy import Column, String, ForeignKey
-from sqlalchemy.orm import relationship
 
 
 class State(BaseModel, Base):
