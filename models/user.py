@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """ holds class User"""
+
+# Add the parent directory to the Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from hashlib import md5
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
