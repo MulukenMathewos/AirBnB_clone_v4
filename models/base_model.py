@@ -5,17 +5,15 @@ Contains class BaseModel
 
 import os
 import sys
+import uuid
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from datetime import datetime
 import models
-from os import getenv
-import sqlalchemy
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
-import uuid
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
 
