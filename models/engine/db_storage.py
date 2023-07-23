@@ -3,6 +3,9 @@
 Contains the class DBStorage
 """
 
+# Add the parent directory to the Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import models
 from models.amenity import Amenity
 from models.base_model import BaseModel, Base
