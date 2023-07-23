@@ -1,5 +1,9 @@
 #!/usr/bin/python
 """ holds class Amenity"""
+
+# Add the parent directory to the Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
