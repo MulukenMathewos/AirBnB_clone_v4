@@ -5,16 +5,14 @@ Contains the class TestConsoleDocs
 
 import os
 import sys
+import console
+import pep8
+import unittest
+HBNBCommand = console.HBNBCommand
 
 # Add the parent directory to the Python path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
-
-import console
-# import inspect
-import pep8
-import unittest
-HBNBCommand = console.HBNBCommand
 
 
 class TestConsoleDocs(unittest.TestCase):
