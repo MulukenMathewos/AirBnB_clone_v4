@@ -5,19 +5,17 @@ Contains the TestCityDocs classes
 
 import os
 import sys
-
-# Add the parent directory to the Python path
-parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(parent_dir)
-
 from datetime import datetime
 import inspect
-import models
 from models import city
 from models.base_model import BaseModel
 import pep8
 import unittest
 City = city.City
+
+# Add the parent directory to the Python path
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(parent_dir)
 
 
 class TestCityDocs(unittest.TestCase):
