@@ -5,19 +5,17 @@ Contains the TestPlaceDocs classes
 
 import os
 import sys
-
-# Add the parent directory to the Python path
-parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(parent_dir)
-
 from datetime import datetime
 import inspect
-import models
 from models import place
 from models.base_model import BaseModel
 import pep8
 import unittest
 Place = place.Place
+
+# Add the parent directory to the Python path
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(parent_dir)
 
 
 class TestPlaceDocs(unittest.TestCase):
