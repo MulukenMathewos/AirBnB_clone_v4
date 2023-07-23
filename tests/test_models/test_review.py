@@ -5,19 +5,17 @@ Contains the TestReviewDocs classes
 
 import os
 import sys
-
-# Add the parent directory to the Python path
-parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(parent_dir)
-
 from datetime import datetime
 import inspect
-import models
 from models import review
 from models.base_model import BaseModel
 import pep8
 import unittest
 Review = review.Review
+
+# Add the parent directory to the Python path
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(parent_dir)
 
 
 class TestReviewDocs(unittest.TestCase):
