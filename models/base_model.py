@@ -26,8 +26,8 @@ class BaseModel:
         created_at = Column(DateTime, default=datetime.utcnow)
         updated_at = Column(DateTime, default=datetime.utcnow)
 
-def __init__(self, *args, **kwargs):
-    """Initialization of the base model"""
+    def __init__(self, *args, **kwargs):
+        """Initialization of the base model"""
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
@@ -35,7 +35,8 @@ def __init__(self, *args, **kwargs):
             # Modified code starts here
             if "created_at" in kwargs:
                 if isinstance(kwargs["created_at"], str):
-                    self.created_at = datetime.strptime(kwargs["created_at"], time)
+                    self.created_at = datetime.strptime(
+                            kwargs["created_at"], time)
                 else:
                     self.created_at = kwargs["created_at"]
             else:
@@ -43,7 +44,8 @@ def __init__(self, *args, **kwargs):
 
             if "updated_at" in kwargs:
                 if isinstance(kwargs["updated_at"], str):
-                    self.updated_at = datetime.strptime(kwargs["updated_at"], time)
+                    self.updated_at = datetime.strptime(
+                            kwargs["updated_at"], time)
                 else:
                     self.updated_at = kwargs["updated_at"]
             else:
