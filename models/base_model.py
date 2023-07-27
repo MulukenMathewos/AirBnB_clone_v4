@@ -26,21 +26,30 @@ class BaseModel:
         created_at = Column(DateTime, default=datetime.utcnow)
         updated_at = Column(DateTime, default=datetime.utcnow)
 
-    def __init__(self, *args, **kwargs):
-        """Initialization of the base model"""
+def __init__(self, *args, **kwargs):
+    """Initialization of the base model"""
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
                     setattr(self, key, value)
-            if kwargs.get("created_at", None) and type(self.created_at) is str:
-                self.created_at = datetime.strptime(kwargs["created_at"], time)
+            # Modified code starts here
+            if "created_at" in kwargs:
+                if isinstance(kwargs["created_at"], str):
+                    self.created_at = datetime.strptime(kwargs["created_at"], time)
+                else:
+                    self.created_at = kwargs["created_at"]
             else:
                 self.created_at = datetime.utcnow()
-            if kwargs.get("updated_at", None) and type(self.updated_at) is str:
-                self.updated_at = datetime.strptime(kwargs["updated_at"], time)
+
+            if "updated_at" in kwargs:
+                if isinstance(kwargs["updated_at"], str):
+                    self.updated_at = datetime.strptime(kwargs["updated_at"], time)
+                else:
+                    self.updated_at = kwargs["updated_at"]
             else:
                 self.updated_at = datetime.utcnow()
-            if kwargs.get("id", None) is None:
+            # Modified code ends here
+            if "id" not in kwargs:
                 self.id = str(uuid.uuid4())
         else:
             self.id = str(uuid.uuid4())
