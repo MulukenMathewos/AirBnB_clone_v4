@@ -91,7 +91,7 @@ class TestFileStorage(unittest.TestCase):
 class TestDBStorage(unittest.TestCase):
     """Test the DBStorage class"""
 
-    @unittest.skipIf(os.getenv(HBNB_TYPE_STORAGE) != 'db',
+    @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
                      "not testing db storage")
     def test_get(self):
         """Test that get returns specific object, or none"""
@@ -104,7 +104,7 @@ class TestDBStorage(unittest.TestCase):
         self.assertIs(None, models.storage.get("blah", "blah"))
         self.assertIs(new_user, models.storage.get("User", new_user.id))
 
-    @unittest.skipIf(os.getenv(HBNB_TYPE_STORAGE) != 'db',
+    @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
                      "not testing db storage")
     def test_count(self):
         """test that new adds an object to the database"""
