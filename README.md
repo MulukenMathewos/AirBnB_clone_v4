@@ -155,8 +155,8 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-* Muluken Mathewos 
-* Addisu Aman 
+* Muluken Malako 
+* Odogwu Kelly
 
 ## License
 Public Domain. No copy write protection. 
